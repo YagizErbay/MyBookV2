@@ -23,13 +23,18 @@ class ViewController: UIViewController
 
         userInterface()
         
+        
     }
-
+    
+   
     //Button UI
     func userInterface()
     {
         baseButton.setButton(button: goToLoginButton, color: Theme.Colors.signUpBlue.color, buttonName: "SIGN UP")
         baseButton.setButton(button: goToSignUpButton, color: Theme.Colors.logInOrange.color, buttonName: "LOG IN")
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         
     }
     
@@ -37,9 +42,11 @@ class ViewController: UIViewController
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let signUpViewController = storyBoard.instantiateViewController(withIdentifier: "signupviewcontroller")
-        self.present(signUpViewController, animated: true, completion: nil)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "signupviewcontroller")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
         
     }
     
@@ -47,3 +54,5 @@ class ViewController: UIViewController
     
 }
 
+
+        

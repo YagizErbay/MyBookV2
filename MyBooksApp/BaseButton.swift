@@ -11,9 +11,7 @@ import UIKit
 
 class BaseButton: UIButton
 {
-    
-    
-    
+
     
     
     
@@ -27,4 +25,6 @@ class BaseButton: UIButton
         button.tintColor = UIColor.white
         button.setTitleColor(UIColor.white, for: .normal)
     }
+    
+    
 }
